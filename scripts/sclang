@@ -1,0 +1,1 @@
+exec /Applications/SuperCollider.app/Contents/MacOS/sclang $@

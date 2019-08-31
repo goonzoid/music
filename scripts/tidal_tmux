@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+set -e
+
+session_name=tidal
+
+echo "creating session"
+tmux new -d -s $session_name
+
+echo "configuring edit window"
+tmux rename-window edit
+tmux split-window -h -t $session_name
+tmux send-keys -t $session_name './scripts/tidal' C-m
+tmux select-pane -t 1
+
+echo "starting superdirt"
+tmux new-window -d -n superdirt
+tmux send-keys -t $session_name:superdirt "./scripts/sclang $PWD/config/superdirt.scd" C-m
+
+tmux attach -t $session_name

@@ -1,0 +1,1 @@
+exec ghci -ghci-script $PWD/config/tidal.ghci
