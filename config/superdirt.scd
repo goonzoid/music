@@ -9,7 +9,7 @@
 
   s.waitForBoot {
     ~dirt = SuperDirt(2, s); // two output channels
-    ~dirt.loadSoundFiles("~/Dropbox/Sound/SuperDirt/*");
+    ~dirt.loadSoundFiles("~/Dropbox/Sounds/SuperDirt/*");
     ~dirt.loadSoundFiles("~/Library/Application Support/SuperCollider/downloaded-quarks/Dirt-Samples/*");
     s.sync;
     ~dirt.start(57120, [0, 0]); // start listening on port 57120, create two busses each sending audio to channel 0
